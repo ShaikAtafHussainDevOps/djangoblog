@@ -23,7 +23,7 @@ pipeline{
         }
         stage("Deploy"){
             steps{
-                sh 'docker run -d --name blogcont -p 8000:8000 djangoblog:v1'
+                sh 'docker-compose down && docker-compose up -d'
             }
         }
     }
